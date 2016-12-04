@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ffmpeg": "0.0.4"
+    "ffmpeg": "0.0.4",
+    "fs-extra": "^1.0.0",
+    "pully": "^2.1.0",
+    "ytdl-core": "^0.7.19"
   }
 }

@@ -26,7 +26,6 @@ module.exports = {
    * https://console.developers.google.com/apis/api/youtube/overview?project=PROJECT_ID (click `Enable API`)
    * You now should see `YouTube Data API v3` on your API dashboard: https://console.developers.google.com/apis/dashboard?project=PROJECT_ID
    * https://console.developers.google.com/apis/credentials?project=PROJECT_ID (Go to `Credentials` tab, Click `Create Credentials` > `API Key`)
-```
 
 4. Run:
 

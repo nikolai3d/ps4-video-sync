@@ -9,6 +9,9 @@ ytapi.setup(api_key); //To get your API key:
 
 var videoFunctions = {
     _getDetailsForVideoIds: function (videoIds, pageToken) {
+
+        //see https://developers.google.com/youtube/v3/docs/videos for sample of output per-video data, we need to specify what we need and parse result
+        
         var params = {
             part: 'snippet,statistics',
             maxResults: 50,

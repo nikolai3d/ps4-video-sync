@@ -44,13 +44,21 @@ const path = require('path');
   const Pully = require('pully').Pully;
   const Presets = require('pully').Presets;
 
+  const ProgressBar = require('ascii-progress');
+
   const pully = new Pully();
 
+  const bar = new ProgressBar();
+
   const options = {
-    url: 'https://www.youtube.com/watch?v=ut4Ba5QGOwI', // https://www.youtube.com/watch?v=J7UwSVsiwzI
+    url: 'https://youtu.be/1LGoIk8oILE',//https://www.youtube.com/watch?v=NOIzH6UcoW4', //https://www.youtube.com/watch?v=ut4Ba5QGOwI', // https://www.youtube.com/watch?v=J7UwSVsiwzI
     preset: Presets.HD,
-    progress: (data) => console.log(data.percent + '%') // Progress reporter callback...
+    progress: (data) => {
+      //console.log(data.percent + '%');
+      bar.update(data.percent * 0.01);
+    } // Progress reporter callback...
   };
+
   console.log("Starting download", options.url)
   pully.download(options).then(
     (resultpath) => {

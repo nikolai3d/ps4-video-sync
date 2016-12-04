@@ -1,9 +1,12 @@
-const ytapi = require('node-youtubeapi-simplifier');
+const ytapi = require('node-youtubeapi-simplifier'); //Youtube API Wrapper doc: https://github.com/Haidy777/node-youtubeAPI-simplifier/tree/master/docs
+const api_key = require('./api-key').api_key();
 
+console.log("Key", api_key);
+ytapi.setup(api_key); //To get your API key:
+// https://developers.google.com/youtube/registering_an_application#Create_API_Keys
+// https://console.developers.google.com/apis/credentials (may need to create a New Project)
 
-ytapi.setup('AIzaSyBgbcxUK2lL3x-JTnV4wqut8vXWlak7_wM');
-
-ytapi.searchFunctions.channelInternalSearch('NikolaiOfTardis', 'DOOM', 25).then(function (data) {
+ytapi.searchFunctions.channelInternalSearch('NikolaiOfTardis', 'Battlefield', 5).then(function (data) {
     console.log(data);
 });
 

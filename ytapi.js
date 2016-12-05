@@ -11,9 +11,9 @@ var videoFunctions = {
     _getDetailsForVideoIds: function (videoIds, pageToken) {
 
         //see https://developers.google.com/youtube/v3/docs/videos for sample of output per-video data, we need to specify what we need and parse result
-        
+
         var params = {
-            part: 'snippet,statistics',
+            part: 'snippet,statistics,contentDetails,liveStreamingDetails',
             maxResults: 50,
             id: ''
         };
@@ -49,6 +49,8 @@ var videoFunctions = {
                     statistics: video.statistics,
                     channelId: snippet.channelId
                 });
+
+                videoDetails.push(video);
             }
 
             if(nextPageToken !== ''){
@@ -66,13 +68,12 @@ var videoFunctions = {
     }
 };
 
-ytapi.searchFunctions.channelInternalSearch('NikolaiOfTardis', 'Battlefield', 5).then(function (data) {
+ytapi.searchFunctions.channelInternalSearch('NikolaiOfTardis', 'Valiant', 5).then(function (data) {
     // console.log(data);
 
     if (data.length > 0) {
       const videoID = data[0].videoId;
       console.log("VideoID", videoID);
-
       videoFunctions.getDetailsForVideoIds([videoID]).then(function (data) {
       console.log(data);
       });

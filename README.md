@@ -20,6 +20,7 @@ module.exports = {
 };
 ```
 
+
 5. To get an API key:
    * https://developers.google.com/youtube/registering_an_application#Create_API_Keys
    * Create new project, get a project ID `PROJECT_ID`
@@ -30,5 +31,5 @@ module.exports = {
 4. Run:
 
 ```
-$ node index.js
+$ node downloader.js <YT-URL>
 ```

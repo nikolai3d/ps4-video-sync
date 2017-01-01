@@ -43,7 +43,6 @@ const path = require('path');
   // import { Pully, Presets } from 'pully';
   const Pully = require('pully').Pully;
   const Presets = require('pully').Presets;
-
   const ProgressBar = require('ascii-progress');
 
   const pully = new Pully();
@@ -52,8 +51,13 @@ const path = require('path');
 
   // console.log(process);
 
+function DownloadFromYoutube() {
   if (process.argv.length < 2) {
-    throw new Error ("Bad Arguments");
+    throw new Error("Bad Arguments");
+  }
+
+  if (process.argv.length < 3) {
+    throw new Error("No URL Specified. Usage `node downloader.js <YT-URL>`");
   }
 
   const argURL = process.argv[2];
@@ -82,3 +86,12 @@ const path = require('path');
       console.error(err);
     } // Error info
   );
+}
+
+try {
+  DownloadFromYoutube();
+} catch (e) {
+  console.error("DLFY ERROR: ", e.message);
+} finally {
+
+}

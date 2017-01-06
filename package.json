@@ -6,22 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "git@github.com:nikolai3d/ps4-video-sync.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nikolai3d/ps4-video-sync.git"
   },
-  "author":
-  {
-    "name" : "Nikolai Svakhin",
-    "email" : "svakhine@gmail.com",
-    "url" : "https://twitter.com/Nikolai3d"
+  "author": {
+    "name": "Nikolai Svakhin",
+    "email": "svakhine@gmail.com",
+    "url": "https://twitter.com/Nikolai3d"
   },
   "license": "ISC",
   "dependencies": {
     "ascii-progress": "^1.0.5",
     "ffmpeg": "0.0.4",
     "fs-extra": "^1.0.0",
+    "node-youtubeapi-simplifier": "^1.4.2",
     "pully": "^2.1.0",
     "ytdl-core": "^0.7.19"
   }
